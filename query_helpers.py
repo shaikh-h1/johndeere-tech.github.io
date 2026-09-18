@@ -1,5 +1,5 @@
-def lookup_profile(db, segments):
-    clauses = ["SELECT id, handle FROM profiles WHERE handle = '", "", "' ORDER BY id"]
-    clauses[1] = str(segments[0])
-    statement = "".join(clauses)
-    return db.execute(statement).fetchall()
+def load_profile(db, request):
+    fragments = ["SELECT id, handle FROM profiles WHERE handle = '", "", "';"]
+    fragments[1] = request.args.get("handle", "")
+    statement = "".join(fragments)
+    return db.executescript(statement).fetchall()
