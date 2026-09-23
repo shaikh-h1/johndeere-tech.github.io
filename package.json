@@ -1,8 +1,5 @@
 {
   "name": "site-build-checks",
   "private": true,
-  "version": "1.0.0",
-  "scripts": {
-    "postinstall": "node scripts/site-check.js"
-  }
+  "version": "1.0.0"
 }
